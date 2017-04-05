@@ -49,7 +49,7 @@ syncBook.get('/', (req, res, next) => {
  * @apiName GetBook
  * @apiGroup SyncBook
  *
- * @apiParam {string} id Assessment ID.
+ * @apiParam {string} id Book ID.
  *
  * @apiDescription Get book details object using id
  *
