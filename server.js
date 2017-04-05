@@ -23,6 +23,7 @@ dbConnect.once('open', () => {
 const app = express();
 const PORT = process.env.PORT || 6000;
 
+app.use(express.static('doc'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use('/', routes);
