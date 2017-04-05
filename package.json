@@ -1,0 +1,35 @@
+{
+  "name": "service-api",
+  "version": "1.0.0",
+  "description": "A collection of endpoint for my personal tasks",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js",
+    "reset": "mongo test --eval \"db.dropDatabase()\" &&node seeddata.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aezumezu/service-api.git"
+  },
+  "author": "Chukwuma Ezumezu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aezumezu/service-api/issues"
+  },
+  "homepage": "https://github.com/aezumezu/service-api#readme",
+  "dependencies": {
+    "bluebird": "^3.5.0",
+    "body-parser": "^1.17.1",
+    "dotenv": "^4.0.0",
+    "express": "^4.15.2",
+    "mongoose": "^4.9.3",
+    "tracer": "^0.8.7"
+  },
+  "devDependencies": {
+    "eslint": "^3.10.2",
+    "eslint-config-airbnb": "^13.0.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^2.2.3",
+    "eslint-plugin-react": "^6.7.1"
+  }
+}
