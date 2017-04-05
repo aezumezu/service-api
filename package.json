@@ -4,7 +4,8 @@
   "description": "A collection of endpoint for my personal tasks",
   "main": "index.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "reset": "mongo test --eval \"db.dropDatabase()\" &&node seeddata.js"
   },
   "repository": {
     "type": "git",
@@ -17,9 +18,11 @@
   },
   "homepage": "https://github.com/aezumezu/service-api#readme",
   "dependencies": {
+    "bluebird": "^3.5.0",
     "body-parser": "^1.17.1",
     "dotenv": "^4.0.0",
     "express": "^4.15.2",
+    "mongoose": "^4.9.3",
     "tracer": "^0.8.7"
   },
   "devDependencies": {

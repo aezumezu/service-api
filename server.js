@@ -1,15 +1,30 @@
 require('dotenv').config({ silent: true });
+const mongoose = require('mongoose');
 const express = require('express');
 const bodyParser = require('body-parser');
-
-const routes = require('./routes');
 const Logger = require('./tracer');
+const routes = require('./routes');
+
+global.ROOTDIR = __dirname;
+mongoose.Promise = require('bluebird');
+
+mongoose.connect(process.env.MONGODB_URI);
+const dbConnect = mongoose.connection;
+
+dbConnect.on('error', (err) => {
+  Logger.error(`Database connection error: ${err.message}`);
+});
+
+dbConnect.once('open', () => {
+  Logger.info('Database connected...');
+});
+
 
 const app = express();
 const PORT = process.env.PORT || 6000;
 
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use('/', routes);
 
 // catch unknown routes
