@@ -5,6 +5,6 @@ routes.get('/', (req, res) => {
   res.send({ success: 'Welcome to Anselm\'s service API system.' });
 });
 
-routes.use('/sync-book', syncBook);
+routes.use('/api/v1/sync-book', syncBook);
 
 module.exports = routes;

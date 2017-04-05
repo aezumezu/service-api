@@ -27,7 +27,7 @@ class Syncbook {
    * @param {Object} res
    * @param {Object} next
    *
-   * @return {object}
+   * @returns {Array}  books
    */
   getBooks(req, res, next) {
     models.SyncBooks.find()
@@ -41,15 +41,16 @@ class Syncbook {
           });
       })
       .catch((err) => {
-        res.send({ error: err });
+        res.send({ error: 'Book list not found.' });
       });
   }
 
   /**
-   * 
+   *
    * @param {object} req
    * @param {object} res
    * @param {object} next
+   * @returns {object} book
    */
   getBook(req, res, next) {
     if (!mongoose.Types.ObjectId.isValid(req.params.id)) {
