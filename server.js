@@ -5,7 +5,6 @@ const bodyParser = require('body-parser');
 const Logger = require('./tracer');
 const routes = require('./routes');
 
-global.ROOTDIR = __dirname;
 mongoose.Promise = require('bluebird');
 
 mongoose.connect(process.env.MONGODB_URI);
@@ -30,6 +29,9 @@ app.use('/', routes);
 
 // catch unknown routes
 app.use((req, res, next) => {
+  if (req.url.startsWith('/images')) {
+    return res.sendFile(`${__dirname}/assets${req.url}`);
+  }
   res.status(404).json({
     error: 'Requested route does not exist yet. Check back later. :wink:'
   });
