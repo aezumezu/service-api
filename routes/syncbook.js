@@ -81,7 +81,7 @@ syncBook.get('/:id', (req, res, next) => {
 });
 
 /**
- * @api {POST} /api/v1/sync-book Add Rating
+ * @api {POST} /api/v1/sync-book/:id/ratings Add Rating
  *
  * @apiName Add Rating
  * @apiGroup SyncBook
