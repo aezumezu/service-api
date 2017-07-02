@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node server.js",
-    "reset": "mongo test --eval \"db.dropDatabase()\" && node seeddata.js"
+    "db-seed": "node seeddata.js"
   },
   "repository": {
     "type": "git",
