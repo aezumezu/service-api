@@ -26,6 +26,7 @@ const allowedOrigins = [
   process.env.allowedOrigins
 ];
 
+console.log('---///---', allowedOrigins, '----///---');
 app.use(cors({
   allowedOrigins
 }));
