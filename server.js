@@ -22,12 +22,14 @@ dbConnect.once('open', () => {
 
 const app = express();
 const PORT = process.env.PORT || 6000;
+const allowedOrigins = [
+  process.env.allowedOrigins
+];
 
 app.use(cors({
-  allowedOrigins: [
-    '*'
-  ]
+  allowedOrigins
 }));
+
 app.use(express.static('doc'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
