@@ -24,7 +24,6 @@ const app = express();
 const PORT = process.env.PORT || 6000;
 const allowedOrigins = process.env.allowedOrigins.split(',');
 
-console.log('---///---\n', allowedOrigins, '----///---\n');
 app.use(cors({
   allowedOrigins
 }));
