@@ -55,7 +55,7 @@ class Syncbook {
    * @returns {object} book
    */
   getBook(req, res, next) {
-    const baseUrl = new URL(req.url).hostname;
+    const baseUrl = req.headers.host;
     if (!mongoose.Types.ObjectId.isValid(req.params.id)) {
       return res.send({});
     }

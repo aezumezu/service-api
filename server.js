@@ -4,6 +4,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const Logger = require('./tracer');
 const routes = require('./routes');
+const cors = require('express-cors');
 
 mongoose.Promise = require('bluebird');
 
@@ -21,6 +22,11 @@ dbConnect.once('open', () => {
 
 const app = express();
 const PORT = process.env.PORT || 6000;
+const allowedOrigins = process.env.allowedOrigins.split(',');
+
+app.use(cors({
+  allowedOrigins
+}));
 
 app.use(express.static('doc'));
 app.use(bodyParser.json());
