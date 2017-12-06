@@ -12,7 +12,7 @@ const emailController = require('../controllers').emailController;
  * @apiParamExample {json} POST Request-Example:
  {
    "email": "Email of the sender",
-   "sbject": "Subject of the email",
+   "subject": "Subject of the email",
    "message": "The message you want to send".
  }
  *
