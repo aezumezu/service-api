@@ -17,7 +17,7 @@ function formatBook(book, baseUrl) {
 }
 
 /**
- * 
+ *
  */
 class Syncbook {
 
