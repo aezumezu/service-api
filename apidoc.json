@@ -1,7 +1,7 @@
 {
-  "name": "Anselm-API-Docs",
+  "name": "api-cluster",
   "version": "0.0.1",
-  "description": "Welcome to Anselm's service API system.",
+  "description": "Welcome to my API cluster. A collection of endpoints for my personal tasks.",
   "title": "Micro-API-Docs",
-  "url" : "https://anselm-api.herokuapp.com"
+  "url" : "https://api-cluster.herokuapp.com"
 }
